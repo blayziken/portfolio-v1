@@ -1,6 +1,9 @@
-import { useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { FaStar } from 'react-icons/fa'
 import { FiArrowUpRight, FiDownload } from 'react-icons/fi'
+import { HoverCard } from './HoverCard'
+import { TagList } from './TagList'
+import { useHoverIndex } from '../hooks/useHoverIndex'
 
 type Project = {
   title: string
@@ -98,25 +101,21 @@ const projects: Project[] = [
 ]
 
 export function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const { isHovered, isDimmed, onHoverStart, onHoverEnd } = useHoverIndex()
 
   return (
     <section id="projects" className="scroll-mt-24 pt-16 lg:pt-24">
       <ul className="flex list-none flex-col gap-2 p-0">
         {projects.map((project, index) => {
-          const isHovered = hoveredIndex === index
-          const isDimmed = hoveredIndex !== null && !isHovered
+          const hovered = isHovered(index)
 
           return (
             <li key={project.title}>
-              <div
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                onFocus={() => setHoveredIndex(index)}
-                onBlur={() => setHoveredIndex(null)}
-                className={`group relative -mx-6 rounded-lg p-6 transition-all duration-300 ${
-                  isHovered ? 'bg-slate-800/50 shadow-lg' : 'bg-transparent'
-                } ${isDimmed ? 'opacity-50' : 'opacity-100'}`}
+              <HoverCard
+                isHovered={hovered}
+                isDimmed={isDimmed(index)}
+                onHoverStart={onHoverStart(index)}
+                onHoverEnd={onHoverEnd}
               >
                 <div className="sm:grid sm:grid-cols-[140px_1fr] sm:gap-6">
                   <div className="mb-3 h-20 w-[140px] shrink-0 overflow-hidden rounded-md border border-white/10 sm:mb-0">
@@ -130,7 +129,7 @@ export function Projects() {
                         target="_blank"
                         rel="noreferrer"
                         className={`no-underline transition-colors duration-200 hover:text-accent-light ${
-                          isHovered ? 'text-accent-light' : 'text-text-primary'
+                          hovered ? 'text-accent-light' : 'text-text-primary'
                         }`}
                       >
                         {project.title}{' '}
@@ -157,20 +156,14 @@ export function Projects() {
                     )}
 
                     {project.tags && (
-                      <ul className="mt-4 flex list-none flex-wrap gap-2 p-0">
-                        {project.tags.map((tag) => (
-                          <li
-                            key={tag}
-                            className="rounded-full bg-accent-light/10 px-3 py-1.5 text-xs font-medium text-accent-light"
-                          >
-                            {tag}
-                          </li>
-                        ))}
-                      </ul>
+                      <TagList
+                        tags={project.tags}
+                        colorClassName="bg-accent-light/10 text-accent-light"
+                      />
                     )}
                   </div>
                 </div>
-              </div>
+              </HoverCard>
             </li>
           )
         })}

@@ -52,7 +52,7 @@ function App() {
               <span
                 aria-hidden="true"
                 className={`h-px bg-current transition-[width] duration-200 group-hover:w-12 group-hover:h-0.5 ${
-                  item.active ? 'w-12 h-0.5' : 'w-8'
+                  item.active ? 'w-20 h-0.5' : 'w-8'
                 }`}
               />
               {item.label.toUpperCase()}

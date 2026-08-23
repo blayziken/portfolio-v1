@@ -1,5 +1,7 @@
-import { useState } from 'react'
 import { FiArrowUpRight, FiLink2 } from 'react-icons/fi'
+import { HoverCard } from './HoverCard'
+import { TagList } from './TagList'
+import { useHoverIndex } from '../hooks/useHoverIndex'
 
 type Job = {
   range: string
@@ -72,25 +74,21 @@ const jobs: Job[] = [
 ]
 
 export function Experience() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const { isHovered, isDimmed, onHoverStart, onHoverEnd } = useHoverIndex()
 
   return (
     <section id="experience" className="scroll-mt-24 pt-16 lg:pt-24">
       <ul className="flex list-none flex-col gap-2 p-0">
         {jobs.map((job, index) => {
-          const isHovered = hoveredIndex === index
-          const isDimmed = hoveredIndex !== null && !isHovered
+          const hovered = isHovered(index)
 
           return (
             <li key={`${job.company}-${job.range}`}>
-              <div
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                onFocus={() => setHoveredIndex(index)}
-                onBlur={() => setHoveredIndex(null)}
-                className={`group relative -mx-6 rounded-lg p-6 transition-all duration-300 ${
-                  isHovered ? 'bg-slate-800/50 shadow-lg' : 'bg-transparent'
-                } ${isDimmed ? 'opacity-50' : 'opacity-100'}`}
+              <HoverCard
+                isHovered={hovered}
+                isDimmed={isDimmed(index)}
+                onHoverStart={onHoverStart(index)}
+                onHoverEnd={onHoverEnd}
               >
                 <div className="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
                   <header className="mb-1 text-sm font-medium tracking-wide text-text-secondary uppercase sm:mb-0 sm:pt-1">
@@ -104,7 +102,7 @@ export function Experience() {
                         target="_blank"
                         rel="noreferrer"
                         className={`no-underline transition-colors duration-200 hover:text-accent-light ${
-                          isHovered ? 'text-teal-300' : 'text-text-primary'
+                          hovered ? 'text-teal-300' : 'text-text-primary'
                         }`}
                       >
                         {job.title} · {job.company}{' '}
@@ -137,19 +135,10 @@ export function Experience() {
                       </ul>
                     )}
 
-                    <ul className="mt-4 flex list-none flex-wrap gap-2 p-0">
-                      {job.tags.map((tag) => (
-                        <li
-                          key={tag}
-                          className="rounded-full bg-teal-400/10 px-3 py-1.5 text-xs font-medium text-teal-300"
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
+                    <TagList tags={job.tags} colorClassName="bg-teal-400/10 text-teal-300" />
                   </div>
                 </div>
-              </div>
+              </HoverCard>
             </li>
           )
         })}

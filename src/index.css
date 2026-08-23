@@ -4,6 +4,7 @@
   --color-primary: #4c8dff;
   --color-secondary: #7b61ff;
   --color-accent: #00c6b8;
+  --color-accent-light: #7bd5d5;
   --color-background: #0d1220;
   --color-surface: #151b2b;
   --color-border: #253047;
@@ -26,6 +27,10 @@
 
 :root {
   color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

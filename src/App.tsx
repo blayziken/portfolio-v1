@@ -17,14 +17,14 @@ function App() {
       <CursorGlow />
       <aside className="box-border flex flex-col self-start px-6 pt-12 pb-8 sm:px-10 lg:sticky lg:top-0 lg:min-h-screen lg:flex-[0_0_clamp(340px,49vw,707px)] lg:pt-[102px] lg:pr-16 lg:pb-[92px] lg:pl-[132px]">
         <div>
-          <h1 className="m-0 text-[51px] font-extrabold leading-[1.05] tracking-[-1.5px] text-text-primary">
-            Brittany Chiang
+          <h1 className="m-0 text-[60px] font-extrabold leading-[1.05] tracking-[-1.5px] text-text-primary">
+            Tolu Oluyipe
           </h1>
           <h2 className="mt-4 text-2xl font-semibold leading-[1.3] text-text-primary">
-            Frontend Engineer
+            Software Developer
           </h2>
           <p className="mt-6 max-w-[280px] text-lg leading-[1.4] text-text-secondary">
-            I build accessible, pixel-perfect experiences for the web.
+            I build accessible, pixel-perfect experiences for web and mobile devices.
           </p>
         </div>
 

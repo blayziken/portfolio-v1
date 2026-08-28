@@ -2,82 +2,30 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-24">
       <p className="max-w-[600px] mb-[18px] text-lg leading-[1.5] text-text-secondary">
-        Hi there! I'm Brittany, and I like building things. I'm a frontend
-        engineer with expertise in crafting accessible, pixel-perfect user
-        interfaces. I take pride in creating thoughtful, inclusive products
-        and have a sharp eye for the little details that separate a good
-        product from an exceptional one. I enjoy working most at the
-        intersection of design and engineering, where great user experience
-        meets clean, scalable code.
+        Hi there! I’m <a className="font-bold text-text-primary ">Tolu</a>, a software developer who enjoys turning ideas into
+        thoughtful, reliable digital experiences. I’m primarily focused on
+        mobile development, building applications that feel intuitive, perform
+        well, and are built to scale
       </p>
       <p className="max-w-[600px] mb-[18px] text-lg leading-[1.5] text-text-secondary">
-        Currently, I'm a Senior Frontend Engineer at{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Klaviyo
-        </a>
-        , where I work on our design system and help build new products,
-        like{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Composer
-        </a>
-        . I lead engineering efforts across our component library and
-        front end platform, partnering closely with designers and
-        engineers to ensure accessibility is built into the foundation of
-        everything we ship.
+        I have over <a className="font-bold text-text-primary">four years</a> of experience working across <a className="font-bold text-text-primary">Flutter, React, React
+        Native, SwiftUI, Kotlin, Python and Node.js</a>, with a strong interest in
+        the intersection of product, design, and engineering. I enjoy taking a
+        product from an idea or design and turning it into a polished experience
+        that people actually enjoy using.
       </p>
       <p className="max-w-[600px] mb-[18px] text-lg leading-[1.5] text-text-secondary">
-        Previously, I've worked across a wide range of environments — from
-        product studios to startups and large tech companies — including{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Apple
-        </a>
-        ,{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Starry Internet
-        </a>
-        , and{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Upstatement
-        </a>
-        . Outside of my day-to-day work, I also created an{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          online video course
-        </a>{' '}
-        a few years ago which walks through building a real-world,
-        API-driven application from scratch. These experiences have shaped
-        how I think about building products that are both well-crafted and
-        widely usable.
+        Throughout my career, I’ve worked across different stages of the development process — from 
+        designing and building mobile interfaces to developing APIs, integrating third-party services, 
+        working with databases, and setting up deployment workflows. I care about writing clean, maintainable 
+        code while keeping the user experience at the center of what I build.
       </p>
-      <p className="max-w-[600px] mb-0 text-lg leading-[1.5] text-text-secondary">
-        In my spare time, you can usually find me climbing, playing
-        tennis, hanging out with my wife and two cats, or running around
-        Hyrule searching for{' '}
-        <a
-          className="font-bold text-text-primary no-underline hover:text-primary hover:underline"
-          href="#"
-        >
-          Korok seeds
-        </a>
-        .
+
+      <p className="max-w-[600px] mb-[18px] text-lg leading-[1.5] text-text-secondary">
+        Outside of coding, I’m usually watching or playing sports, exploring new technology, or working 
+        on personal projects. I’m always looking for opportunities to learn, build better products, and 
+        solve interesting problems.
       </p>
     </section>
-  )
+  );
 }

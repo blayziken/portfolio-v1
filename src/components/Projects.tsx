@@ -66,15 +66,15 @@ function BrittanyChiangV4Thumbnail() {
 
 const projects: Project[] = [
   {
-    title: 'Build a Spotify Connected App',
-    url: 'https://www.thebrittanychiang.com',
+    title: 'Glamiris',
+    url: 'https://apps.apple.com/ng/app/glamiris/id1572687679?platform=iphone',
     description:
-      'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
+      'A salon management software made with a passion for customer happiness and business growth.',
     thumbnail: <SpotifyCourseThumbnail />,
   },
   {
-    title: 'Spotify Profile',
-    url: 'https://spotify-profile.herokuapp.com',
+    title: 'MySkool Portal',
+    url: 'https://play.google.com/store/apps/details?id=com.krystaldigital.MySkool_Portal',
     description:
       'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     meta: { icon: 'star', label: '720' },
@@ -82,18 +82,18 @@ const projects: Project[] = [
     thumbnail: <SpotifyProfileThumbnail />,
   },
   {
-    title: 'Halcyon Theme',
-    url: 'https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode',
+    title: 'Inspire Education',
+    url: 'https://www.inspire.krystalng.com/',
     description:
-      'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
+      'A comprehensive digital education platform developed in partnership with educational initiatives to bring the classroom closer to students',
     meta: { icon: 'download', label: '100k+ Installs' },
     thumbnail: <HalcyonThumbnail />,
   },
   {
-    title: 'brittanychiang.com (v4)',
-    url: 'https://github.com/bchiang7/v4',
+    title: 'CBS',
+    url: 'https://apps.apple.com/ca/app/central-billing-system/id1661103467',
     description:
-      'Fourth iteration of my personal website built with Gatsby and hosted on Netlify. Designed and built from scratch, with an emphasis on interaction and identity.',
+      'A central billing platform for all Federal Unity Colleges in Nigeria',
     meta: { icon: 'star', label: '1.4k' },
     tags: ['Gatsby', 'React', 'Styled Components'],
     thumbnail: <BrittanyChiangV4Thumbnail />,

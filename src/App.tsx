@@ -1,34 +1,16 @@
-import {
-  FaCodepen,
-  FaGithub,
-  FaGoodreadsG,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa'
-import { About } from './components/About'
-import { CursorGlow } from './components/CursorGlow'
-import { Experience } from './components/Experience'
-import { Projects } from './components/Projects'
-import { useActiveSection } from './hooks/useActiveSection'
 
-const navItems = [
-  { label: 'About', href: '#about', id: 'about' },
-  { label: 'Experience', href: '#experience', id: 'experience' },
-  { label: 'Projects', href: '#projects', id: 'projects' },
-]
+import { About } from "./components/About";
+import { CursorGlow } from "./components/CursorGlow";
+import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
+import { useActiveSection } from "./hooks/useActiveSection";
+import { navItems } from "./features/home/nav_items";
+import { socialLinks } from "./features/home/social_link";
 
-const sectionIds = navItems.map((item) => item.id)
-
-const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com', Icon: FaGithub },
-  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: FaLinkedin },
-  { label: 'CodePen', href: 'https://codepen.io', Icon: FaCodepen },
-  { label: 'Instagram', href: 'https://instagram.com', Icon: FaInstagram },
-  { label: 'Goodreads', href: 'https://goodreads.com', Icon: FaGoodreadsG },
-]
+const sectionIds = navItems.map((item) => item.id);
 
 function App() {
-  const activeId = useActiveSection(sectionIds)
+  const activeId = useActiveSection(sectionIds);
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-900 lg:flex-row">
@@ -46,28 +28,31 @@ function App() {
           </p>
         </div>
 
-        <nav className="mt-10 flex flex-col gap-6 lg:mt-22" aria-label="Primary">
+        <nav
+          className="mt-10 flex flex-col gap-6 lg:mt-22"
+          aria-label="Primary"
+        >
           {navItems.map((item) => {
-            const isActive = item.id === activeId
+            const isActive = item.id === activeId;
             return (
               <a
                 key={item.label}
                 href={item.href}
                 className={`group flex items-center gap-4 py-1 text-[13px] font-bold tracking-[2px] transition-colors duration-200 ${
                   isActive
-                    ? 'text-text-primary opacity-100'
-                    : 'text-text-secondary opacity-60 hover:text-text-primary hover:opacity-100'
+                    ? "text-text-primary opacity-100"
+                    : "text-text-secondary opacity-60 hover:text-text-primary hover:opacity-100"
                 }`}
               >
                 <span
                   aria-hidden="true"
                   className={`h-px bg-current transition-[width] duration-200 group-hover:w-12 group-hover:h-0.5 ${
-                    isActive ? 'w-20 h-0.5' : 'w-8'
+                    isActive ? "w-20 h-0.5" : "w-8"
                   }`}
                 />
                 {item.label.toUpperCase()}
               </a>
-            )
+            );
           })}
         </nav>
 
@@ -94,7 +79,7 @@ function App() {
         <Projects />
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

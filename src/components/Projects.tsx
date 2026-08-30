@@ -4,6 +4,7 @@ import { FiArrowUpRight, FiDownload } from 'react-icons/fi'
 import { HoverCard } from './HoverCard'
 import { TagList } from './TagList'
 import { useHoverIndex } from '../hooks/useHoverIndex'
+import glamirisImage from '../assets/glamiris.png'
 
 type Project = {
   title: string
@@ -14,19 +15,14 @@ type Project = {
   thumbnail: ReactNode
 }
 
-function SpotifyCourseThumbnail() {
+function GlamirisThumbnail() {
   return (
-    <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-teal-500 via-sky-600 to-indigo-700 p-2.5">
-      <div className="flex items-center gap-1.5 text-[9px] font-semibold text-white/90">
-        <span>node</span>
-        <span className="text-white/50">·</span>
-        <span>⬡</span>
-        <span className="text-white/50">·</span>
-        <span>♫</span>
-      </div>
-      <p className="text-[11px] leading-tight font-bold text-white">
-        Build a Spotify Connected App
-      </p>
+    <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-teal-500 via-sky-600 to-indigo-700">
+      <img
+        src={glamirisImage}
+        alt="Glamiris"
+        className="h-full w-full"
+      />
     </div>
   )
 }
@@ -70,7 +66,7 @@ const projects: Project[] = [
     url: 'https://apps.apple.com/ng/app/glamiris/id1572687679?platform=iphone',
     description:
       'A salon management software made with a passion for customer happiness and business growth.',
-    thumbnail: <SpotifyCourseThumbnail />,
+    thumbnail: <GlamirisThumbnail />,
   },
   {
     title: 'MySkool Portal',

@@ -1,41 +1,35 @@
-import type { ReactNode } from 'react'
-import { FaStar } from 'react-icons/fa'
-import { FiArrowUpRight, FiDownload } from 'react-icons/fi'
-import { HoverCard } from './HoverCard'
-import { TagList } from './TagList'
-import { useHoverIndex } from '../hooks/useHoverIndex'
-import glamirisImage from '../assets/glamiris.png'
+import type { ReactNode } from "react";
+import { FaStar } from "react-icons/fa";
+import { FiArrowUpRight, FiDownload } from "react-icons/fi";
+import { HoverCard } from "./HoverCard";
+import { TagList } from "./TagList";
+import { useHoverIndex } from "../hooks/useHoverIndex";
+import glamirisImage from "../assets/glamiris.png";
+import mspImage from "../assets/msp.png";
 
 type Project = {
-  title: string
-  url: string
-  description: string
-  meta?: { icon: 'star' | 'download'; label: string }
-  tags?: string[]
-  thumbnail: ReactNode
-}
+  title: string;
+  url: string;
+  description: string;
+  meta?: { icon: "star" | "download"; label: string };
+  tags?: string[];
+  thumbnail: ReactNode;
+};
 
 function GlamirisThumbnail() {
   return (
     <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-teal-500 via-sky-600 to-indigo-700">
-      <img
-        src={glamirisImage}
-        alt="Glamiris"
-        className="h-full w-full"
-      />
+      <img src={glamirisImage} alt="Glamiris" className="h-full w-full" />
     </div>
-  )
+  );
 }
 
-function SpotifyProfileThumbnail() {
+function MSPThumbnail() {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-1.5 bg-slate-950">
-      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-primary text-[9px] font-bold text-white">
-        BC
-      </div>
-      <p className="text-[9px] font-medium text-white/80">Brittany Chiang</p>
+    <div className="flex flex-col items-center justify-center gap-1.5 bg-slate-950">
+      <img src={mspImage} alt="Glamiris" className="h-full w-cover" />{" "}
     </div>
-  )
+  );
 }
 
 function HalcyonThumbnail() {
@@ -48,62 +42,64 @@ function HalcyonThumbnail() {
         <div className="h-1 w-5/6 rounded-full bg-white/10" />
       </div>
     </div>
-  )
+  );
 }
 
 function BrittanyChiangV4Thumbnail() {
   return (
     <div className="flex h-full w-full flex-col justify-center gap-1 bg-slate-950 p-2.5">
       <p className="text-[11px] font-bold text-white">Brittany Chiang.</p>
-      <p className="text-[9px] text-text-secondary">I build things for the web.</p>
+      <p className="text-[9px] text-text-secondary">
+        I build things for the web.
+      </p>
     </div>
-  )
+  );
 }
 
 const projects: Project[] = [
   {
-    title: 'Glamiris',
-    url: 'https://apps.apple.com/ng/app/glamiris/id1572687679?platform=iphone',
+    title: "Glamiris",
+    url: "https://apps.apple.com/ng/app/glamiris/id1572687679?platform=iphone",
     description:
-      'A salon management software made with a passion for customer happiness and business growth.',
+      "A salon management software made with a passion for customer happiness and business growth.",
     thumbnail: <GlamirisThumbnail />,
   },
   {
-    title: 'MySkool Portal',
-    url: 'https://play.google.com/store/apps/details?id=com.krystaldigital.MySkool_Portal',
+    title: "MySkool Portal",
+    url: "https://play.google.com/store/apps/details?id=com.krystaldigital.MySkool_Portal",
     description:
-      'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-    meta: { icon: 'star', label: '720' },
-    tags: ['React', 'Express', 'Spotify API', 'Heroku'],
-    thumbnail: <SpotifyProfileThumbnail />,
+      "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+    meta: { icon: "star", label: "720" },
+    tags: ["React", "Express", "Spotify API", "Heroku"],
+    thumbnail: <MSPThumbnail />,
   },
   {
-    title: 'Inspire Education',
-    url: 'https://www.inspire.krystalng.com/',
+    title: "Inspire Education",
+    url: "https://www.inspire.krystalng.com/",
     description:
-      'A comprehensive digital education platform developed in partnership with educational initiatives to bring the classroom closer to students',
-    meta: { icon: 'download', label: '100k+ Installs' },
+      "A comprehensive digital education platform developed in partnership with educational initiatives to bring the classroom closer to students",
+    meta: { icon: "download", label: "100k+ Installs" },
     thumbnail: <HalcyonThumbnail />,
   },
   {
-    title: 'CBS',
-    url: 'https://apps.apple.com/ca/app/central-billing-system/id1661103467',
+    title: "CBS",
+    url: "https://apps.apple.com/ca/app/central-billing-system/id1661103467",
     description:
-      'A central billing platform for all Federal Unity Colleges in Nigeria',
-    meta: { icon: 'star', label: '1.4k' },
-    tags: ['Gatsby', 'React', 'Styled Components'],
+      "A central billing platform for all Federal Unity Colleges in Nigeria",
+    meta: { icon: "star", label: "1.4k" },
+    tags: ["Gatsby", "React", "Styled Components"],
     thumbnail: <BrittanyChiangV4Thumbnail />,
   },
-]
+];
 
 export function Projects() {
-  const { isHovered, isDimmed, onHoverStart, onHoverEnd } = useHoverIndex()
+  const { isHovered, isDimmed, onHoverStart, onHoverEnd } = useHoverIndex();
 
   return (
     <section id="projects" className="scroll-mt-24 pt-16 lg:pt-24">
       <ul className="flex list-none flex-col gap-2 p-0">
         {projects.map((project, index) => {
-          const hovered = isHovered(index)
+          const hovered = isHovered(index);
 
           return (
             <li key={project.title}>
@@ -125,10 +121,10 @@ export function Projects() {
                         target="_blank"
                         rel="noreferrer"
                         className={`no-underline transition-colors duration-200 hover:text-accent-light ${
-                          hovered ? 'text-accent-light' : 'text-text-primary'
+                          hovered ? "text-accent-light" : "text-text-primary"
                         }`}
                       >
-                        {project.title}{' '}
+                        {project.title}{" "}
                         <FiArrowUpRight
                           aria-hidden="true"
                           className="inline h-4 w-4 -translate-y-0.5"
@@ -142,7 +138,7 @@ export function Projects() {
 
                     {project.meta && (
                       <div className="mt-3 flex items-center gap-1.5 text-sm font-medium text-text-primary">
-                        {project.meta.icon === 'star' ? (
+                        {project.meta.icon === "star" ? (
                           <FaStar aria-hidden="true" className="h-3.5 w-3.5" />
                         ) : (
                           <FiDownload aria-hidden="true" className="h-4 w-4" />
@@ -161,9 +157,9 @@ export function Projects() {
                 </div>
               </HoverCard>
             </li>
-          )
+          );
         })}
       </ul>
     </section>
-  )
+  );
 }

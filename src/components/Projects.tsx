@@ -6,6 +6,8 @@ import { TagList } from "./TagList";
 import { useHoverIndex } from "../hooks/useHoverIndex";
 import glamirisImage from "../assets/glamiris.png";
 import mspImage from "../assets/msp.png";
+import inspireImage from "../assets/inspire.png";
+import cbsImage from "../assets/cbs.png";
 
 type Project = {
   title: string;
@@ -27,31 +29,27 @@ function GlamirisThumbnail() {
 function MSPThumbnail() {
   return (
     <div className="flex flex-col items-center justify-center gap-1.5 bg-slate-950">
-      <img src={mspImage} alt="Glamiris" className="h-full w-cover" />{" "}
+      <img
+        src={mspImage}
+        alt="MySkool Portal"
+        className="h-full w-cover"
+      />{" "}
     </div>
   );
 }
 
-function HalcyonThumbnail() {
+function InspireThumbnail() {
   return (
-    <div className="flex h-full w-full flex-col gap-1.5 bg-[#1d2433] p-2.5">
-      <p className="text-[11px] font-semibold text-amber-400">Halcyon</p>
-      <div className="flex flex-col gap-1">
-        <div className="h-1 w-3/4 rounded-full bg-white/15" />
-        <div className="h-1 w-1/2 rounded-full bg-accent-light/25" />
-        <div className="h-1 w-5/6 rounded-full bg-white/10" />
-      </div>
+    <div className="flex h-full w-full">
+      <img src={inspireImage} alt="Inspire" className="h-full w-cover" />{" "}
     </div>
   );
 }
 
-function BrittanyChiangV4Thumbnail() {
+function CBSThumbnail() {
   return (
-    <div className="flex h-full w-full flex-col justify-center gap-1 bg-slate-950 p-2.5">
-      <p className="text-[11px] font-bold text-white">Brittany Chiang.</p>
-      <p className="text-[9px] text-text-secondary">
-        I build things for the web.
-      </p>
+    <div className="flex flex-col justify-center">
+      <img src={cbsImage} alt="CBS" className="h-full w-cover" />{" "}
     </div>
   );
 }
@@ -74,21 +72,21 @@ const projects: Project[] = [
     thumbnail: <MSPThumbnail />,
   },
   {
-    title: "Inspire Education",
+    title: "Inspire Learning",
     url: "https://www.inspire.krystalng.com/",
     description:
       "A comprehensive digital education platform developed in partnership with educational initiatives to bring the classroom closer to students",
     meta: { icon: "download", label: "100k+ Installs" },
-    thumbnail: <HalcyonThumbnail />,
+    thumbnail: <InspireThumbnail />,
   },
   {
-    title: "CBS",
+    title: "Central Billing System",
     url: "https://apps.apple.com/ca/app/central-billing-system/id1661103467",
     description:
       "A central billing platform for all Federal Unity Colleges in Nigeria",
     meta: { icon: "star", label: "1.4k" },
     tags: ["Gatsby", "React", "Styled Components"],
-    thumbnail: <BrittanyChiangV4Thumbnail />,
+    thumbnail: <CBSThumbnail />,
   },
 ];
 

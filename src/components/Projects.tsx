@@ -66,9 +66,8 @@ const projects: Project[] = [
     title: "MySkool Portal",
     url: "https://play.google.com/store/apps/details?id=com.krystaldigital.MySkool_Portal",
     description:
-      "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-    meta: { icon: "star", label: "720" },
-    tags: ["React", "Express", "Spotify API", "Heroku"],
+      "Ultimate app for managing school activities efficiently, Teachers can easily manage their students while parents have access to track their child's performance and records. Experience intuitive user interface and optimized performance, making school management simpler and more efficient.",
+    meta: { icon: "download", label: "5k+ Installs" },
     thumbnail: <MSPThumbnail />,
   },
   {
@@ -76,7 +75,8 @@ const projects: Project[] = [
     url: "https://www.inspire.krystalng.com/",
     description:
       "A comprehensive digital education platform developed in partnership with educational initiatives to bring the classroom closer to students",
-    meta: { icon: "download", label: "100k+ Installs" },
+    meta: { icon: "download", label: "10k+ Installs" },
+    tags: ["React", "Laravel", "Flutter", "MySQL"],
     thumbnail: <InspireThumbnail />,
   },
   {
@@ -85,7 +85,7 @@ const projects: Project[] = [
     description:
       "A central billing platform for all Federal Unity Colleges in Nigeria",
     meta: { icon: "star", label: "1.4k" },
-    tags: ["Gatsby", "React", "Styled Components"],
+    tags: ["HTML/CSS", "Laravel", "Flutter"],
     thumbnail: <CBSThumbnail />,
   },
 ];
